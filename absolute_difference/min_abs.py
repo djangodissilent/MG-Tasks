@@ -4,7 +4,7 @@ def min_abs(lst):
 
 
     Approach:
-        - Sort the list to get the invariant -> { list[i] - lst[i-1] <= list[i - k] for k in [0, len(lst)[ }.
+        - Sort the list to get the following invariant -> { list[i] - lst[i-1] <= list[i - k] for k in [0, len(lst)[ }.
         - Iterate over the list and keep track of the minimum absolute difference.
         - The minimum is the minimum absolute difference between any two numbers in the list.
 
