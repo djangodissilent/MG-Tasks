@@ -1,8 +1,8 @@
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Task, Transition_Graph
 from .models import Task_Serializer
-from django.views.decorators.csrf import csrf_exempt
 
 
 @csrf_exempt
