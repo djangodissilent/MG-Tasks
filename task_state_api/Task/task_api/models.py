@@ -28,7 +28,7 @@ class Task_Serializer(serializers.ModelSerializer):
 class Transition_Graph:
     def __init__(self):
         self.graph = {'draft': ["active", "archived"], 'active': [
-            "archived", "done"], 'done': ["archived"]}
+            "archived", "done"], 'done': ["archived"], 'archived': []}
 
     def is_valid_transition(self, from_state, to_state):
         return to_state in self.graph[from_state]
