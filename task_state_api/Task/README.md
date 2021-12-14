@@ -28,7 +28,7 @@ python manage.py makemigrations && python manage.py migrate && python manage.py 
 Docker: 
 ```
 docker build --tag task .
-docker run --publish 8000:8000 -d --name task-server task
+docker run --publish 8000:8000 -d task
 ```
 
 Usage:
@@ -36,3 +36,8 @@ Usage:
     ```curl localhost:8000 ```
 
     Welcome to the Task-API!
+
+Test:
+```
+python manage.py test
+```
