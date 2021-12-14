@@ -29,4 +29,7 @@ jobs:
     - name: Run Tests
       working-directory: ./task_state_api/Task
       run: |
+        python manage.py makemigrations task_api
+        python manage.py migrate
+        python manage.py runserver
         python manage.py test
