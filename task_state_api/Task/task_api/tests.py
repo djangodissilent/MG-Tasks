@@ -1,6 +1,7 @@
 from django.test import TestCase
 import requests
 from queue import Queue
+import subprocess
 
 from .models import Transition_Graph
 
@@ -8,7 +9,7 @@ from .models import Transition_Graph
 class TestTaskApi(TestCase):
     def setUp(self):
         self.base = 'http://localhost:8000/'
-
+        subprocess.call(["cd ..", "python3 manage.py makemigrations task_api"], "python3 manage.py migrate", "pyhton3 manage.py runserver")
     def test_create_task(self):
         """
         Test the creation of a task

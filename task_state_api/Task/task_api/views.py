@@ -33,6 +33,15 @@ def get_task(request, task_id):
 
 
 @csrf_exempt
+def get_all_tasks(request):
+    if request.method != 'GET':
+        return JsonResponse({"success": False})
+    tasks = Task.objects.all()
+    serializer = Task_Serializer(tasks, many=True)
+    return JsonResponse({"success": True, "tasks": serializer.data})
+
+
+@csrf_exempt
 def update_task_name(request):
     if request.method != 'POST':
         return JsonResponse({"success": False})
